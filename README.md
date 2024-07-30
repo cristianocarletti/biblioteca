@@ -23,24 +23,24 @@ DB_PASSWORD=root<BR>
 4 - php artisan serve --port=80 (you can choose the port or not pass the port parameter then it will run on the default port)<BR>
 
 ## 3 - ACESSANDO OS ENDPOINTS:
-1 - COM EXCEÇÃO DOS ENDPOINTS REGISTRAR E AUTENTICAR, TODOS OS OUTROS EXIGEM O TOKEN!
-SENDO ASSIM É PRECISO AUTENTICAR:
-http://127.0.0.1/api/autenticar
-BODY:
-{
-"email": "super@usuario.com",
-"password": "12345678"
-}
-RETURN TOKEN EXEMPLO:
-"auth": {
-"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGVudGljYXIiLCJpYXQiOjE3MjIyNTc4MDUsImV4cCI6MTcyMjI2MTQwNSwibmJmIjoxNzIyMjU3ODA1LCJqdGkiOiJuVlVIQ01qd2dJMTdqS0c5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.68tx2XjesmXoy19lrQ-RjKR9KZof9Rt0DC1gametV6k",
-"type": "bearer"
-}
-2 - POSTERIORMENTE SEMPRE ENVIAR O BEARER TOKEN NO CABEÇALHO DOS ENDPOINTS
-3 - CASO NÃO ENVIE SEMPRE RETORNARÁ O ERRO:
-{
-	"error": "Bearer token no cabeçalho é obrigatório."
-}
+1 - COM EXCEÇÃO DOS ENDPOINTS REGISTRAR E AUTENTICAR, TODOS OS OUTROS EXIGEM O TOKEN!<BR>
+SENDO ASSIM É PRECISO AUTENTICAR:<BR>
+http://127.0.0.1/api/autenticar<BR>
+BODY:<BR>
+{<BR>
+"email": "super@usuario.com",<BR>
+"password": "12345678"<BR>
+}<BR>
+RETURN TOKEN EXEMPLO:<BR>
+"auth": {<BR>
+"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGVudGljYXIiLCJpYXQiOjE3MjIyNTc4MDUsImV4cCI6MTcyMjI2MTQwNSwibmJmIjoxNzIyMjU3ODA1LCJqdGkiOiJuVlVIQ01qd2dJMTdqS0c5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.68tx2XjesmXoy19lrQ-RjKR9KZof9Rt0DC1gametV6k",<BR>
+"type": "bearer"<BR>
+}<BR>
+2 - POSTERIORMENTE SEMPRE ENVIAR O BEARER TOKEN NO CABEÇALHO DOS ENDPOINTS<BR>
+3 - CASO NÃO ENVIE SEMPRE RETORNARÁ O ERRO:<BR>
+{<BR>
+	"error": "Bearer token no cabeçalho é obrigatório."<BR>
+}<BR>
 
 ## 4 - DOCUMENTATION
 to see the documentation of api run:<BR>
