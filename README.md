@@ -37,6 +37,10 @@ RETURN TOKEN EXEMPLO:
 "type": "bearer"
 }
 2 - POSTERIORMENTE SEMPRE ENVIAR O BEARER TOKEN NO CABEÇALHO DOS ENDPOINTS
+3 - CASO NÃO ENVIE SEMPRE RETORNARÁ O ERRO:
+{
+	"error": "Bearer token no cabeçalho é obrigatório."
+}
 
 ## 4 - DOCUMENTATION
 to see the documentation of api run:<BR>
