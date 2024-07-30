@@ -26,32 +26,49 @@ DB_PASSWORD=root<BR>
 to see the list of routes run:<BR>
 php artisan route:list<BR>
 <code>
-| Domain | Method   | URI                   | Name | Action                                                     | Middleware            
-               |
-+--------+----------+-----------------------+------+------------------------------------------------------------+--------------------------------------+
-|        | GET|HEAD | /                     |      | Closure                                                    | web                   
-               |
-|        | POST     | api/login             |      | App\Http\Controllers\AuthController@login                  | api                   
-               |
-|        | POST     | api/logout            |      | App\Http\Controllers\AuthController@logout                 | api                   
-               |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | POST     | api/refresh           |      | App\Http\Controllers\AuthController@refresh                | api                   
-               |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | POST     | api/register          |      | App\Http\Controllers\AuthController@register               | api                   
-               |
-|        | DELETE   | api/user/destroy/{id} |      | App\Http\Controllers\UserController@destroy                | api                   
-               |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | GET|HEAD | api/user/index        |      | App\Http\Controllers\UserController@index                  | api                                  |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | GET|HEAD | api/user/show/{id}    |      | App\Http\Controllers\UserController@show                   | api                                  |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | POST     | api/user/store        |      | App\Http\Controllers\UserController@store                  | api                                  |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | POST     | api/user/update       |      | App\Http\Controllers\UserController@update                 | api                                  |
-|        |          |                       |      |                                                            | App\Http\Middleware\Authenticate:api |
-|        | GET|HEAD | sanctum/csrf-cookie   |      | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                  |
-+--------+----------+-----------------------+------+------------------------------------------------------------+--------------------------------------+
++--------+----------+----------------------------------+-----------------------------+------------------------------------------------------------+--------------------------------------+
+| Domain | Method   | URI                              | Name                        | Action                                                     | Middleware                           |
++--------+----------+----------------------------------+-----------------------------+------------------------------------------------------------+--------------------------------------+
+|        | GET|HEAD | /                                |                             | Closure                                                    | web                                  |
+|        | POST     | api/autenticar                   | auth.autenticar.autenticar  | App\Http\Controllers\AuthController@autenticar             | api                                  |
+|        | POST     | api/registrar                    | user.registrar.store        | App\Http\Controllers\UserController@store                  | api                                  |
+|        | POST     | api/tests/autenticar             | test.auth.autenticar        | App\Http\Controllers\AuthController@autenticar             | api                                  |
+|        | PUT      | api/tests/autores/atualizar/{id} | test.autores.atualizar      | App\Http\Controllers\AutoresController@update              | api                                  |
+|        | POST     | api/tests/autores/criar          | test.autores.criar          | App\Http\Controllers\AutoresController@store               | api                                  |
+|        | DELETE   | api/tests/autores/deletar/{id}   | test.autores.deletar        | App\Http\Controllers\AutoresController@destroy             | api                                  |
+|        | GET|HEAD | api/tests/autores/listar         | test.autores.listar         | App\Http\Controllers\AutoresController@index               | api                                  |
+|        | GET|HEAD | api/tests/emprestimos/listar     | test.emprestimos.listar     | App\Http\Controllers\EmprestimosController@index           | api                                  |
+|        | POST     | api/tests/emprestimos/registrar  | test.emprestimos.registrar  | App\Http\Controllers\EmprestimosController@store           | api                                  |
+|        | PUT      | api/tests/livros/atualizar/{id}  | test.livros.atualizar       | App\Http\Controllers\LivrosController@update               | api                                  |
+|        | POST     | api/tests/livros/criar           | test.livros.criar           | App\Http\Controllers\LivrosController@store                | api                                  |
+|        | DELETE   | api/tests/livros/deletar/{id}    | test.livros.deletar         | App\Http\Controllers\LivrosController@destroy              | api                                  |
+|        | GET|HEAD | api/tests/livros/listar          | test.livros.listar          | App\Http\Controllers\LivrosController@index                | api                                  |
+|        | POST     | api/tests/registrar              | test.user.store             | App\Http\Controllers\UserController@store                  | api                                  |
+|        | POST     | api/tests/sair                   | test.sair.logout            | App\Http\Controllers\AuthController@logout                 | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\Authenticate:api |
+|        | PUT      | api/v1/autores/atualizar/{id}    | autores.atualizar.update    | App\Http\Controllers\AutoresController@update              | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | POST     | api/v1/autores/criar             | autores.criar.store         | App\Http\Controllers\AutoresController@store               | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | DELETE   | api/v1/autores/deletar/{id}      | autores.deletar.destroy     | App\Http\Controllers\AutoresController@destroy             | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | GET|HEAD | api/v1/autores/listar            | autores.listar.index        | App\Http\Controllers\AutoresController@index               | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | GET|HEAD | api/v1/emprestimos/listar        | emprestimos.listar.index    | App\Http\Controllers\EmprestimosController@index           | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | POST     | api/v1/emprestimos/registrar     | emprestimos.registrar.store | App\Http\Controllers\EmprestimosController@store           | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | PUT      | api/v1/livros/atualizar/{id}     | livros.atualizar.update     | App\Http\Controllers\LivrosController@update               | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | POST     | api/v1/livros/criar              | livros.criar.store          | App\Http\Controllers\LivrosController@store                | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | DELETE   | api/v1/livros/deletar/{id}       | livros.deletar.destroy      | App\Http\Controllers\LivrosController@destroy              | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | GET|HEAD | api/v1/livros/listar             | livros.listar.index         | App\Http\Controllers\LivrosController@index                | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        | POST     | api/v1/sair                      | sair.logout                 | App\Http\Controllers\AuthController@logout                 | api                                  |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\CheckBearerToken |
+|        |          |                                  |                             |                                                            | App\Http\Middleware\Authenticate:api |
+|        | GET|HEAD | sanctum/csrf-cookie              |                             | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                  |
++--------+----------+----------------------------------+-----------------------------+------------------------------------------------------------+--------------------------------------+
 </code>
