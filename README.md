@@ -31,7 +31,10 @@ http://127.0.0.1/docs<BR>
 to run tests:<BR>
 php artisan tests<BR>
 
-## 5 - ROUTE LIST
+## 5 - INSOMNIA FILE TO IMPORT:
+Insomnia_2024-07-30.json<BR>
+
+## 6 - ROUTE LIST
 to see the list of routes run:<BR>
 php artisan route:list<BR>
 <code>
