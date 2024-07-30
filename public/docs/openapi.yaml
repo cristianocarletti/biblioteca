@@ -1,0 +1,353 @@
+openapi: 3.0.3
+info:
+  title: Laravel
+  description: ''
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+paths:
+  /api/autenticar:
+    post:
+      summary: ''
+      operationId: postApiAutenticar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: tremblay.eryn@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: v;$C!l
+              required:
+                - email
+                - password
+      security: []
+  /api/registrar:
+    post:
+      summary: ''
+      operationId: postApiRegistrar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: wfitrfzzwydsu
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: pinkie74@example.org
+                password:
+                  type: string
+                  description: 'Must be at least 8 characters.'
+                  example: '[cCt_6?zrWVpy?'
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/v1/sair:
+    post:
+      summary: ''
+      operationId: postApiV1Sair
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/autores/listar:
+    get:
+      summary: ''
+      operationId: getApiV1AutoresListar
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Bearer token no cabeçalho é obrigatório.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Bearer token no cabeçalho é obrigatório.'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/autores/criar:
+    post:
+      summary: ''
+      operationId: postApiV1AutoresCriar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 100 characters.'
+                  example: phpjkyuogsufwcvib
+                data_nascimento:
+                  type: string
+                  description: 'Must be a valid date. Must be at least 10 characters.'
+                  example: msvfohyvwru
+              required:
+                - nome
+                - data_nascimento
+      security: []
+  /api/v1/autores/atualizar:
+    put:
+      summary: ''
+      operationId: putApiV1AutoresAtualizar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  description: 'Must not be greater than 100 characters.'
+                  example: bjzfz
+                data_nascimento:
+                  type: string
+                  description: 'Must be a valid date. Must be at least 10 characters.'
+                  example: vjxoohvvbrhbjubdpirfpfuebdminlapqphvyqwfsykuzk
+              required:
+                - nome
+                - data_nascimento
+      security: []
+  '/api/v1/autores/deletar/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1AutoresDeletarId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the deletar.'
+        example: voluptate
+        required: true
+        schema:
+          type: string
+  /api/v1/livros/listar:
+    get:
+      summary: ''
+      operationId: getApiV1LivrosListar
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Bearer token no cabeçalho é obrigatório.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Bearer token no cabeçalho é obrigatório.'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/livros/criar:
+    post:
+      summary: ''
+      operationId: postApiV1LivrosCriar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titulo:
+                  type: string
+                  description: 'Must not be greater than 100 characters.'
+                  example: afelurojmbttavhtgrjweqj
+                ano_publicacao:
+                  type: integer
+                  description: 'Must be at least 4.'
+                  example: 4
+              required:
+                - titulo
+                - ano_publicacao
+      security: []
+  /api/v1/livros/atualizar:
+    put:
+      summary: ''
+      operationId: putApiV1LivrosAtualizar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                titulo:
+                  type: string
+                  description: 'Must not be greater than 100 characters.'
+                  example: wwixyqerhew
+                ano_publicacao:
+                  type: integer
+                  description: 'Must be at least 4.'
+                  example: 32
+              required:
+                - titulo
+                - ano_publicacao
+      security: []
+  '/api/v1/livros/deletar/{id}':
+    delete:
+      summary: ''
+      operationId: deleteApiV1LivrosDeletarId
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the deletar.'
+        example: aut
+        required: true
+        schema:
+          type: string
+  /api/v1/emprestimos/listar:
+    get:
+      summary: ''
+      operationId: getApiV1EmprestimosListar
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  error: 'Bearer token no cabeçalho é obrigatório.'
+                properties:
+                  error:
+                    type: string
+                    example: 'Bearer token no cabeçalho é obrigatório.'
+      tags:
+        - Endpoints
+      security: []
+  /api/v1/emprestimos/registrar:
+    post:
+      summary: ''
+      operationId: postApiV1EmprestimosRegistrar
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                user_id:
+                  type: integer
+                  description: ''
+                  example: 17
+                livro_id:
+                  type: integer
+                  description: ''
+                  example: 2
+                data_emprestimo:
+                  type: string
+                  description: 'Must be a valid date. Must be at least 10 characters.'
+                  example: gujvqwyorhlivcufsdftwxxyumanimakramitghrswquaoatdrjgxqyvpgzwythbmctoknrgbphhgshv
+                data_devolucao:
+                  type: string
+                  description: 'Must be a valid date. Must be at least 10 characters.'
+                  example: gjdjjpwlufshjormhvsk
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: ilene07@example.com
+                nome:
+                  type: string
+                  description: 'Must not be greater than 100 characters.'
+                  example: rhfhfdkdtlmtutuyz
+                mensagem:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: jhtpq
+              required:
+                - user_id
+                - livro_id
+                - data_emprestimo
+                - data_devolucao
+                - email
+                - nome
+                - mensagem
+      security: []
+tags:
+  -
+    name: Endpoints
+    description: ''
