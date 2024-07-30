@@ -22,19 +22,35 @@ DB_PASSWORD=root<BR>
 3 - php artisan jwt:secret<BR>
 4 - php artisan serve --port=80 (you can choose the port or not pass the port parameter then it will run on the default port)<BR>
 
-## 3 - DOCUMENTATION
+## 3 - ACESSANDO OS ENDPOINTS:
+1 - COM EXCEÇÃO DOS ENDPOINTS REGISTRAR E AUTENTICAR, TODOS OS OUTROS EXIGEM O TOKEN!
+SENDO ASSIM É PRECISO AUTENTICAR:
+http://127.0.0.1/api/autenticar
+BODY:
+{
+"email": "super@usuario.com",
+"password": "12345678"
+}
+RETURN TOKEN EXEMPLO:
+"auth": {
+"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGVudGljYXIiLCJpYXQiOjE3MjIyNTc4MDUsImV4cCI6MTcyMjI2MTQwNSwibmJmIjoxNzIyMjU3ODA1LCJqdGkiOiJuVlVIQ01qd2dJMTdqS0c5Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.68tx2XjesmXoy19lrQ-RjKR9KZof9Rt0DC1gametV6k",
+"type": "bearer"
+}
+2 - POSTERIORMENTE SEMPRE ENVIAR O BEARER TOKEN NO CABEÇALHO DOS ENDPOINTS
+
+## 4 - DOCUMENTATION
 to see the documentation of api run:<BR>
 http://127.0.0.1/docs<BR>
 
 
-## 4 - TESTS
+## 5 - TESTS
 to run tests:<BR>
 php artisan tests<BR>
 
-## 5 - INSOMNIA FILE TO IMPORT:
+## 6 - INSOMNIA FILE TO IMPORT:
 Insomnia_2024-07-30.json<BR>
 
-## 6 - ROUTE LIST
+## 7 - ROUTE LIST
 to see the list of routes run:<BR>
 php artisan route:list<BR>
 <code>
