@@ -25,12 +25,11 @@ DB_PASSWORD=root<BR>
 ## 3 - DOCUMENTATION
 to see the documentation of api run:<BR>
 http://127.0.0.1/docs<BR>
-<code>
+
 
 ## 4 - TESTS
 to run tests:<BR>
 php artisan tests<BR>
-<code>
 
 ## 5 - ROUTE LIST
 to see the list of routes run:<BR>
