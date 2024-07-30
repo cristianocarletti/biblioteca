@@ -22,7 +22,17 @@ DB_PASSWORD=root<BR>
 3 - php artisan jwt:secret<BR>
 4 - php artisan serve --port=80 (you can choose the port or not pass the port parameter then it will run on the default port)<BR>
 
-## 3 - ROUTE LIST
+## 3 - DOCUMENTATION
+to see the documentation of api run:<BR>
+http://127.0.0.1/docs<BR>
+<code>
+
+## 4 - TESTS
+to run tests:<BR>
+php artisan tests<BR>
+<code>
+
+## 5 - ROUTE LIST
 to see the list of routes run:<BR>
 php artisan route:list<BR>
 <code>
@@ -72,13 +82,3 @@ php artisan route:list<BR>
 |        | GET|HEAD | sanctum/csrf-cookie              |                             | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                  |
 +--------+----------+----------------------------------+-----------------------------+------------------------------------------------------------+--------------------------------------+
 </code>
-
-## 4 - DOCUMENTATION
-to see the documentation of api run:<BR>
-http://127.0.0.1/docs<BR>
-<code>
-
-## 5 - TESTS
-to run tests:<BR>
-php artisan tests<BR>
-<code>
