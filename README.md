@@ -72,3 +72,13 @@ php artisan route:list<BR>
 |        | GET|HEAD | sanctum/csrf-cookie              |                             | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                  |
 +--------+----------+----------------------------------+-----------------------------+------------------------------------------------------------+--------------------------------------+
 </code>
+
+## 4 - DOCUMENTATION
+to see the documentation of api run:<BR>
+http://127.0.0.1/docs<BR>
+<code>
+
+## 5 - TESTS
+to run tests:<BR>
+php artisan tests<BR>
+<code>
